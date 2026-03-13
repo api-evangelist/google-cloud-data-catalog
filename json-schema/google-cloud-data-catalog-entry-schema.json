@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-data-catalog/refs/heads/main/json-schema/google-cloud-data-catalog-entry-schema.json",
+  "title": "Google Cloud Data Catalog Entry",
+  "description": "Represents a data catalog entry, which is a metadata record for a data resource such as a BigQuery table, Pub/Sub topic, or Cloud Storage fileset.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Output only. The resource name of the entry."
+    },
+    "linkedResource": {
+      "type": "string",
+      "description": "The resource this metadata entry refers to."
+    },
+    "fullyQualifiedName": {
+      "type": "string",
+      "description": "Fully qualified name of the resource."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "ENTRY_TYPE_UNSPECIFIED",
+        "TABLE",
+        "MODEL",
+        "DATA_STREAM",
+        "FILESET",
+        "CLUSTER",
+        "DATABASE",
+        "DATA_SOURCE_CONNECTION",
+        "ROUTINE",
+        "LAKE",
+        "ZONE",
+        "SERVICE"
+      ],
+      "description": "The type of the entry."
+    },
+    "displayName": {
+      "type": "string",
+      "description": "Display name of the entry."
+    },
+    "description": {
+      "type": "string",
+      "description": "Entry description that can include rich text."
+    },
+    "schema": {
+      "type": "object",
+      "description": "Schema of the entry, such as columns in a table.",
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "column": {
+                "type": "string",
+                "description": "Column name."
+              },
+              "type": {
+                "type": "string",
+                "description": "Type of the column."
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of the column."
+              },
+              "mode": {
+                "type": "string",
+                "enum": ["MODE_UNSPECIFIED", "NULLABLE", "REQUIRED", "REPEATED"],
+                "description": "A column mode indicates whether values are required, nullable, or repeated."
+              }
+            }
+          }
+        }
+      }
+    },
+    "sourceSystemTimestamps": {
+      "type": "object",
+      "description": "Timestamps from the underlying source system.",
+      "properties": {
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expireTime": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "integratedSystem": {
+      "type": "string",
+      "description": "Output only. The source system of the entry."
+    },
+    "userSpecifiedSystem": {
+      "type": "string",
+      "description": "Custom source system that user specified."
+    }
+  },
+  "required": ["type"]
+}

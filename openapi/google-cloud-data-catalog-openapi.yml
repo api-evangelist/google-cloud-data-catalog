@@ -1,0 +1,571 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Data Catalog API
+  description: >-
+    The Data Catalog API provides a unified view of all data assets and enables
+    metadata management, data discovery, and data governance across an organization.
+    It allows programmatic creation and management of entries, tag templates, and
+    policy tags.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/data-catalog
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+externalDocs:
+  description: Google Cloud Data Catalog Documentation
+  url: https://cloud.google.com/data-catalog/docs/reference/rest
+servers:
+- url: https://datacatalog.googleapis.com/v1
+  description: Google Cloud Data Catalog API v1
+security:
+- oauth2: []
+tags:
+- name: Catalog
+  description: Search operations across the catalog
+- name: Entries
+  description: Operations for managing catalog entries
+- name: EntryGroups
+  description: Operations for managing entry groups
+- name: TagTemplates
+  description: Operations for managing tag templates
+- name: Tags
+  description: Operations for managing tags on entries
+- name: Taxonomies
+  description: Operations for managing policy tag taxonomies
+paths:
+  /catalog:search:
+    post:
+      operationId: searchCatalog
+      summary: Search Data Catalog
+      description: Searches Data Catalog for multiple resources like entries and tags that match a query.
+      tags:
+      - Catalog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scope:
+                  type: object
+                  properties:
+                    includeProjectIds:
+                      type: array
+                      items:
+                        type: string
+                    includeOrgIds:
+                      type: array
+                      items:
+                        type: string
+                query:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+                orderBy:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCatalogResponse'
+  /projects/{projectId}/locations/{location}/entryGroups:
+    get:
+      operationId: listEntryGroups
+      summary: List entry groups
+      description: Lists entry groups in the specified project and location.
+      tags:
+      - EntryGroups
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListEntryGroupsResponse'
+    post:
+      operationId: createEntryGroup
+      summary: Create an entry group
+      description: Creates an entry group in the specified project and location.
+      tags:
+      - EntryGroups
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryGroupId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntryGroup'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntryGroup'
+  /projects/{projectId}/locations/{location}/entryGroups/{entryGroupId}/entries:
+    get:
+      operationId: listEntries
+      summary: List entries
+      description: Lists entries in an entry group.
+      tags:
+      - Entries
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListEntriesResponse'
+    post:
+      operationId: createEntry
+      summary: Create an entry
+      description: Creates an entry in the specified entry group.
+      tags:
+      - Entries
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entry'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entry'
+  /projects/{projectId}/locations/{location}/entryGroups/{entryGroupId}/entries/{entryId}:
+    get:
+      operationId: getEntry
+      summary: Get an entry
+      description: Gets an entry by its resource name.
+      tags:
+      - Entries
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entry'
+    patch:
+      operationId: updateEntry
+      summary: Update an entry
+      description: Updates an existing entry.
+      tags:
+      - Entries
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: updateMask
+        in: query
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entry'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entry'
+    delete:
+      operationId: deleteEntry
+      summary: Delete an entry
+      description: Deletes an existing entry.
+      tags:
+      - Entries
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryGroupId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entryId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /projects/{projectId}/locations/{location}/tagTemplates:
+    post:
+      operationId: createTagTemplate
+      summary: Create a tag template
+      description: Creates a tag template for attaching metadata to data resources.
+      tags:
+      - TagTemplates
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tagTemplateId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagTemplate'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagTemplate'
+  /projects/{projectId}/locations/{location}/tagTemplates/{tagTemplateId}:
+    get:
+      operationId: getTagTemplate
+      summary: Get a tag template
+      description: Gets a tag template by its resource name.
+      tags:
+      - TagTemplates
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tagTemplateId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagTemplate'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+  schemas:
+    Entry:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Output only. The resource name of the entry.
+        linkedResource:
+          type: string
+          description: The resource this metadata entry refers to.
+        fullyQualifiedName:
+          type: string
+          description: Fully qualified name of the resource.
+        type:
+          type: string
+          enum:
+          - ENTRY_TYPE_UNSPECIFIED
+          - TABLE
+          - MODEL
+          - DATA_STREAM
+          - FILESET
+          - CLUSTER
+          - DATABASE
+          - DATA_SOURCE_CONNECTION
+          - ROUTINE
+          - LAKE
+          - ZONE
+          - SERVICE
+          description: The type of the entry.
+        displayName:
+          type: string
+          description: Display name of the entry.
+        description:
+          type: string
+          description: Entry description.
+        schema:
+          type: object
+          properties:
+            columns:
+              type: array
+              items:
+                type: object
+                properties:
+                  column:
+                    type: string
+                  type:
+                    type: string
+                  description:
+                    type: string
+                  mode:
+                    type: string
+        sourceSystemTimestamps:
+          type: object
+          properties:
+            createTime:
+              type: string
+              format: date-time
+            updateTime:
+              type: string
+              format: date-time
+            expireTime:
+              type: string
+              format: date-time
+        integratedSystem:
+          type: string
+          description: Output only. The source system of the entry.
+        userSpecifiedSystem:
+          type: string
+          description: Custom source system that user specified.
+    EntryGroup:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        dataCatalogTimestamps:
+          type: object
+          properties:
+            createTime:
+              type: string
+              format: date-time
+            updateTime:
+              type: string
+              format: date-time
+    TagTemplate:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        isPubliclyReadable:
+          type: boolean
+        fields:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              displayName:
+                type: string
+              type:
+                type: object
+                properties:
+                  primitiveType:
+                    type: string
+                    enum:
+                    - PRIMITIVE_TYPE_UNSPECIFIED
+                    - DOUBLE
+                    - STRING
+                    - BOOL
+                    - TIMESTAMP
+                    - RICHTEXT
+              isRequired:
+                type: boolean
+              order:
+                type: integer
+    SearchCatalogResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              searchResultType:
+                type: string
+              searchResultSubtype:
+                type: string
+              relativeResourceName:
+                type: string
+              linkedResource:
+                type: string
+              fullyQualifiedName:
+                type: string
+              displayName:
+                type: string
+              description:
+                type: string
+        nextPageToken:
+          type: string
+        totalSize:
+          type: integer
+    ListEntryGroupsResponse:
+      type: object
+      properties:
+        entryGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntryGroup'
+        nextPageToken:
+          type: string
+    ListEntriesResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry'
+        nextPageToken:
+          type: string

@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcloud": "https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries#",
+    "Entry": "gcloud:Entry",
+    "EntryGroup": "gcloud:EntryGroup",
+    "TagTemplate": "gcloud:TagTemplate",
+    "name": "schema:name",
+    "description": "schema:description",
+    "displayName": "schema:alternateName",
+    "type": "schema:additionalType",
+    "linkedResource": "schema:url",
+    "fullyQualifiedName": "schema:identifier",
+    "schema": "schema:schemaVersion",
+    "integratedSystem": "schema:sourceOrganization",
+    "userSpecifiedSystem": "schema:provider",
+    "sourceSystemTimestamps": {
+      "@id": "schema:TemporalCoverage",
+      "@context": {
+        "createTime": "schema:dateCreated",
+        "updateTime": "schema:dateModified",
+        "expireTime": "schema:expires"
+      }
+    }
+  }
+}
