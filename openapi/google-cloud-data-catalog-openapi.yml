@@ -30,10 +30,6 @@ tags:
     description: Operations for managing entry groups
   - name: TagTemplates
     description: Operations for managing tag templates
-  - name: Tags
-    description: Operations for managing tags on entries
-  - name: Taxonomies
-    description: Operations for managing policy tag taxonomies
 paths:
   /catalog:search:
     post:
