@@ -17,31 +17,31 @@ externalDocs:
   description: Google Cloud Data Catalog Documentation
   url: https://cloud.google.com/data-catalog/docs/reference/rest
 servers:
-- url: https://datacatalog.googleapis.com/v1
-  description: Google Cloud Data Catalog API v1
+  - url: https://datacatalog.googleapis.com/v1
+    description: Google Cloud Data Catalog API v1
 security:
-- oauth2: []
+  - oauth2: []
 tags:
-- name: Catalog
-  description: Search operations across the catalog
-- name: Entries
-  description: Operations for managing catalog entries
-- name: EntryGroups
-  description: Operations for managing entry groups
-- name: TagTemplates
-  description: Operations for managing tag templates
-- name: Tags
-  description: Operations for managing tags on entries
-- name: Taxonomies
-  description: Operations for managing policy tag taxonomies
+  - name: Catalog
+    description: Search operations across the catalog
+  - name: Entries
+    description: Operations for managing catalog entries
+  - name: EntryGroups
+    description: Operations for managing entry groups
+  - name: TagTemplates
+    description: Operations for managing tag templates
+  - name: Tags
+    description: Operations for managing tags on entries
+  - name: Taxonomies
+    description: Operations for managing policy tag taxonomies
 paths:
   /catalog:search:
     post:
       operationId: searchCatalog
-      summary: Search Data Catalog
+      summary: Google Cloud Data Catalog Search Data Catalog
       description: Searches Data Catalog for multiple resources like entries and tags that match a query.
       tags:
-      - Catalog
+        - Catalog
       requestBody:
         required: true
         content:
@@ -78,29 +78,29 @@ paths:
   /projects/{projectId}/locations/{location}/entryGroups:
     get:
       operationId: listEntryGroups
-      summary: List entry groups
+      summary: Google Cloud Data Catalog List entry groups
       description: Lists entry groups in the specified project and location.
       tags:
-      - EntryGroups
+        - EntryGroups
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -110,26 +110,26 @@ paths:
                 $ref: '#/components/schemas/ListEntryGroupsResponse'
     post:
       operationId: createEntryGroup
-      summary: Create an entry group
+      summary: Google Cloud Data Catalog Create an entry group
       description: Creates an entry group in the specified project and location.
       tags:
-      - EntryGroups
+        - EntryGroups
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryGroupId
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryGroupId
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -146,34 +146,34 @@ paths:
   /projects/{projectId}/locations/{location}/entryGroups/{entryGroupId}/entries:
     get:
       operationId: listEntries
-      summary: List entries
+      summary: Google Cloud Data Catalog List entries
       description: Lists entries in an entry group.
       tags:
-      - Entries
+        - Entries
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryGroupId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryGroupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -183,31 +183,31 @@ paths:
                 $ref: '#/components/schemas/ListEntriesResponse'
     post:
       operationId: createEntry
-      summary: Create an entry
+      summary: Google Cloud Data Catalog Create an entry
       description: Creates an entry in the specified entry group.
       tags:
-      - Entries
+        - Entries
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryGroupId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryId
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryGroupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryId
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -224,31 +224,31 @@ paths:
   /projects/{projectId}/locations/{location}/entryGroups/{entryGroupId}/entries/{entryId}:
     get:
       operationId: getEntry
-      summary: Get an entry
+      summary: Google Cloud Data Catalog Get an entry
       description: Gets an entry by its resource name.
       tags:
-      - Entries
+        - Entries
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryGroupId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryGroupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -258,35 +258,35 @@ paths:
                 $ref: '#/components/schemas/Entry'
     patch:
       operationId: updateEntry
-      summary: Update an entry
+      summary: Google Cloud Data Catalog Update an entry
       description: Updates an existing entry.
       tags:
-      - Entries
+        - Entries
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryGroupId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: updateMask
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryGroupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -302,57 +302,57 @@ paths:
                 $ref: '#/components/schemas/Entry'
     delete:
       operationId: deleteEntry
-      summary: Delete an entry
+      summary: Google Cloud Data Catalog Delete an entry
       description: Deletes an existing entry.
       tags:
-      - Entries
+        - Entries
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryGroupId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: entryId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryGroupId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: entryId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
   /projects/{projectId}/locations/{location}/tagTemplates:
     post:
       operationId: createTagTemplate
-      summary: Create a tag template
+      summary: Google Cloud Data Catalog Create a tag template
       description: Creates a tag template for attaching metadata to data resources.
       tags:
-      - TagTemplates
+        - TagTemplates
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: tagTemplateId
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tagTemplateId
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -369,26 +369,26 @@ paths:
   /projects/{projectId}/locations/{location}/tagTemplates/{tagTemplateId}:
     get:
       operationId: getTagTemplate
-      summary: Get a tag template
+      summary: Google Cloud Data Catalog Get a tag template
       description: Gets a tag template by its resource name.
       tags:
-      - TagTemplates
+        - TagTemplates
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: tagTemplateId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tagTemplateId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -422,18 +422,18 @@ components:
         type:
           type: string
           enum:
-          - ENTRY_TYPE_UNSPECIFIED
-          - TABLE
-          - MODEL
-          - DATA_STREAM
-          - FILESET
-          - CLUSTER
-          - DATABASE
-          - DATA_SOURCE_CONNECTION
-          - ROUTINE
-          - LAKE
-          - ZONE
-          - SERVICE
+            - ENTRY_TYPE_UNSPECIFIED
+            - TABLE
+            - MODEL
+            - DATA_STREAM
+            - FILESET
+            - CLUSTER
+            - DATABASE
+            - DATA_SOURCE_CONNECTION
+            - ROUTINE
+            - LAKE
+            - ZONE
+            - SERVICE
           description: The type of the entry.
         displayName:
           type: string
@@ -515,12 +515,12 @@ components:
                   primitiveType:
                     type: string
                     enum:
-                    - PRIMITIVE_TYPE_UNSPECIFIED
-                    - DOUBLE
-                    - STRING
-                    - BOOL
-                    - TIMESTAMP
-                    - RICHTEXT
+                      - PRIMITIVE_TYPE_UNSPECIFIED
+                      - DOUBLE
+                      - STRING
+                      - BOOL
+                      - TIMESTAMP
+                      - RICHTEXT
               isRequired:
                 type: boolean
               order:
