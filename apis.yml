@@ -56,6 +56,10 @@ common:
     url: https://cloud.google.com/data-catalog/docs/support
   - type: JSON-LD
     url: json-ld/google-cloud-data-catalog-context.jsonld
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
