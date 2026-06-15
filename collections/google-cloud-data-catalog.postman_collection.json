@@ -1,0 +1,1544 @@
+{
+  "item": [
+    {
+      "id": "bb360d10-8874-41f2-82b0-6242f4c44fd3",
+      "name": "Catalog",
+      "description": {
+        "content": "Search operations across the catalog",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "882cf69b-a1af-4144-98d6-13c88acc4d21",
+          "name": "Google Cloud Data Catalog Search Data Catalog",
+          "request": {
+            "name": "Google Cloud Data Catalog Search Data Catalog",
+            "description": {
+              "content": "Searches Data Catalog for multiple resources like entries and tags that match a query.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "catalog:search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scope\": {\n    \"includeProjectIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"includeOrgIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"query\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "266ee4e2-222b-40ad-9273-f8b8b859e0f2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "catalog:search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scope\": {\n    \"includeProjectIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"includeOrgIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"query\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"searchResultType\": \"string\",\n      \"searchResultSubtype\": \"string\",\n      \"relativeResourceName\": \"string\",\n      \"linkedResource\": \"string\",\n      \"fullyQualifiedName\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"searchResultType\": \"string\",\n      \"searchResultSubtype\": \"string\",\n      \"relativeResourceName\": \"string\",\n      \"linkedResource\": \"string\",\n      \"fullyQualifiedName\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\",\n  \"totalSize\": 5011\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "157d661d-fcb7-4315-8298-8ef1c02d5270",
+      "name": "Entries",
+      "description": {
+        "content": "Operations for managing catalog entries",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cefdbcc2-bb10-4976-965c-f32f4b9c3ea6",
+          "name": "Google Cloud Data Catalog List entries",
+          "request": {
+            "name": "Google Cloud Data Catalog List entries",
+            "description": {
+              "content": "Lists entries in an entry group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups",
+                ":entryGroupId",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryGroupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74c65a32-3dbe-493c-b798-1c4ec4a9cd2d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups",
+                    ":entryGroupId",
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryGroupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entries\": [\n    {\n      \"name\": \"string\",\n      \"linkedResource\": \"string\",\n      \"fullyQualifiedName\": \"string\",\n      \"type\": \"ENTRY_TYPE_UNSPECIFIED\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"schema\": {\n        \"columns\": [\n          {\n            \"column\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"mode\": \"string\"\n          },\n          {\n            \"column\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"mode\": \"string\"\n          }\n        ]\n      },\n      \"sourceSystemTimestamps\": {\n        \"createTime\": \"2015-08-03T04:33:53.047Z\",\n        \"updateTime\": \"1950-08-10T11:14:59.331Z\",\n        \"expireTime\": \"1983-02-27T20:24:53.617Z\"\n      },\n      \"integratedSystem\": \"string\",\n      \"userSpecifiedSystem\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"linkedResource\": \"string\",\n      \"fullyQualifiedName\": \"string\",\n      \"type\": \"DATA_SOURCE_CONNECTION\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"schema\": {\n        \"columns\": [\n          {\n            \"column\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"mode\": \"string\"\n          },\n          {\n            \"column\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"mode\": \"string\"\n          }\n        ]\n      },\n      \"sourceSystemTimestamps\": {\n        \"createTime\": \"1954-06-19T03:28:24.626Z\",\n        \"updateTime\": \"1970-04-14T00:58:32.552Z\",\n        \"expireTime\": \"1994-06-11T07:01:05.842Z\"\n      },\n      \"integratedSystem\": \"string\",\n      \"userSpecifiedSystem\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9293183e-0721-4e7f-a41f-aff9eb2462a2",
+          "name": "Google Cloud Data Catalog Create an entry",
+          "request": {
+            "name": "Google Cloud Data Catalog Create an entry",
+            "description": {
+              "content": "Creates an entry in the specified entry group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups",
+                ":entryGroupId",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "entryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryGroupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7b99b923-4c0d-418c-b314-56d9c0218bd2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups",
+                    ":entryGroupId",
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryGroupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"linkedResource\": \"string\",\n  \"fullyQualifiedName\": \"string\",\n  \"type\": \"MODEL\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"mode\": \"string\"\n      },\n      {\n        \"column\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"mode\": \"string\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"1970-09-07T13:03:17.185Z\",\n    \"updateTime\": \"2000-01-02T08:30:31.812Z\",\n    \"expireTime\": \"2014-06-15T05:32:29.653Z\"\n  },\n  \"integratedSystem\": \"string\",\n  \"userSpecifiedSystem\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6dbfd71b-a153-4716-b1d4-3117cd49fbac",
+          "name": "Google Cloud Data Catalog Get an entry",
+          "request": {
+            "name": "Google Cloud Data Catalog Get an entry",
+            "description": {
+              "content": "Gets an entry by its resource name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups",
+                ":entryGroupId",
+                "entries",
+                ":entryId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c40b772d-9e06-42a9-8616-8fd6fc6b743b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups",
+                    ":entryGroupId",
+                    "entries",
+                    ":entryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"linkedResource\": \"string\",\n  \"fullyQualifiedName\": \"string\",\n  \"type\": \"MODEL\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"mode\": \"string\"\n      },\n      {\n        \"column\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"mode\": \"string\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"1970-09-07T13:03:17.185Z\",\n    \"updateTime\": \"2000-01-02T08:30:31.812Z\",\n    \"expireTime\": \"2014-06-15T05:32:29.653Z\"\n  },\n  \"integratedSystem\": \"string\",\n  \"userSpecifiedSystem\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d875ddb-f596-4881-a7e7-59f741dfdf75",
+          "name": "Google Cloud Data Catalog Update an entry",
+          "request": {
+            "name": "Google Cloud Data Catalog Update an entry",
+            "description": {
+              "content": "Updates an existing entry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups",
+                ":entryGroupId",
+                "entries",
+                ":entryId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "updateMask",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da448334-b1ea-4bb1-b9bd-78aef290a1af",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups",
+                    ":entryGroupId",
+                    "entries",
+                    ":entryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updateMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"linkedResource\": \"string\",\n  \"fullyQualifiedName\": \"string\",\n  \"type\": \"MODEL\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"mode\": \"string\"\n      },\n      {\n        \"column\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"mode\": \"string\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"1970-09-07T13:03:17.185Z\",\n    \"updateTime\": \"2000-01-02T08:30:31.812Z\",\n    \"expireTime\": \"2014-06-15T05:32:29.653Z\"\n  },\n  \"integratedSystem\": \"string\",\n  \"userSpecifiedSystem\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57c5bcef-9106-45ac-8e21-5a4cd31a9874",
+          "name": "Google Cloud Data Catalog Delete an entry",
+          "request": {
+            "name": "Google Cloud Data Catalog Delete an entry",
+            "description": {
+              "content": "Deletes an existing entry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups",
+                ":entryGroupId",
+                "entries",
+                ":entryId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryGroupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entryId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a4a3a4a-bb8d-4666-a14f-2d6eb871cbb2",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups",
+                    ":entryGroupId",
+                    "entries",
+                    ":entryId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryGroupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entryId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0f2903f3-c740-4900-b598-24242b5ef3f1",
+      "name": "EntryGroups",
+      "description": {
+        "content": "Operations for managing entry groups",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c1e9630e-179f-46b8-9e31-cd1aa37f3087",
+          "name": "Google Cloud Data Catalog List entry groups",
+          "request": {
+            "name": "Google Cloud Data Catalog List entry groups",
+            "description": {
+              "content": "Lists entry groups in the specified project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "573e177e-ff1b-4014-b02b-b75d98aa05bf",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entryGroups\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"dataCatalogTimestamps\": {\n        \"createTime\": \"1956-07-13T11:20:07.159Z\",\n        \"updateTime\": \"1994-10-18T11:37:00.046Z\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"dataCatalogTimestamps\": {\n        \"createTime\": \"1996-05-23T03:23:44.546Z\",\n        \"updateTime\": \"1987-01-12T16:54:29.324Z\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b70a84a5-f970-4535-acae-4b138552563a",
+          "name": "Google Cloud Data Catalog Create an entry group",
+          "request": {
+            "name": "Google Cloud Data Catalog Create an entry group",
+            "description": {
+              "content": "Creates an entry group in the specified project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "entryGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "entryGroupId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"dataCatalogTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "af892591-2344-4fc6-b121-15ea621f18e4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "entryGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entryGroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"dataCatalogTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"dataCatalogTimestamps\": {\n    \"createTime\": \"2010-03-11T01:55:06.846Z\",\n    \"updateTime\": \"1967-11-21T16:56:03.606Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f256204b-8881-4c05-a856-f8dd95cf3e90",
+      "name": "TagTemplates",
+      "description": {
+        "content": "Operations for managing tag templates",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b170529-a6b0-43c2-983a-7b2ea6829891",
+          "name": "Google Cloud Data Catalog Create a tag template",
+          "request": {
+            "name": "Google Cloud Data Catalog Create a tag template",
+            "description": {
+              "content": "Creates a tag template for attaching metadata to data resources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "tagTemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "tagTemplateId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"isPubliclyReadable\": \"<boolean>\",\n  \"fields\": {\n    \"key_0\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"<string>\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    },\n    \"key_1\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"<string>\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    },\n    \"key_2\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"<string>\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d148a8b5-9abe-4020-90c3-8ace11dc21b7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "tagTemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "tagTemplateId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"isPubliclyReadable\": \"<boolean>\",\n  \"fields\": {\n    \"key_0\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"<string>\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    },\n    \"key_1\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"<string>\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    },\n    \"key_2\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"<string>\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"isPubliclyReadable\": false,\n  \"fields\": {\n    \"key_0\": {\n      \"displayName\": \"string\",\n      \"type\": {\n        \"primitiveType\": \"STRING\"\n      },\n      \"isRequired\": false,\n      \"order\": 6969\n    },\n    \"key_1\": {\n      \"displayName\": \"string\",\n      \"type\": {\n        \"primitiveType\": \"RICHTEXT\"\n      },\n      \"isRequired\": false,\n      \"order\": 6084\n    },\n    \"key_2\": {\n      \"displayName\": \"string\",\n      \"type\": {\n        \"primitiveType\": \"STRING\"\n      },\n      \"isRequired\": false,\n      \"order\": 6269\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e062855-4ed5-47c8-98f2-95b3e1cb7d40",
+          "name": "Google Cloud Data Catalog Get a tag template",
+          "request": {
+            "name": "Google Cloud Data Catalog Get a tag template",
+            "description": {
+              "content": "Gets a tag template by its resource name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "tagTemplates",
+                ":tagTemplateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tagTemplateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be11d780-928d-4f6b-9fe0-0e28ae22c614",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "tagTemplates",
+                    ":tagTemplateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tagTemplateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"isPubliclyReadable\": false,\n  \"fields\": {\n    \"key_0\": {\n      \"displayName\": \"string\",\n      \"type\": {\n        \"primitiveType\": \"STRING\"\n      },\n      \"isRequired\": false,\n      \"order\": 6969\n    },\n    \"key_1\": {\n      \"displayName\": \"string\",\n      \"type\": {\n        \"primitiveType\": \"RICHTEXT\"\n      },\n      \"isRequired\": false,\n      \"order\": 6084\n    },\n    \"key_2\": {\n      \"displayName\": \"string\",\n      \"type\": {\n        \"primitiveType\": \"STRING\"\n      },\n      \"isRequired\": false,\n      \"order\": 6269\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://datacatalog.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "21b2fd63-4011-42b9-afbc-e1321a7d57a7",
+    "name": "Google Cloud Data Catalog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

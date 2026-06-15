@@ -1,0 +1,377 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Data Catalog API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Search Data Catalog",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datacatalog.googleapis.com/v1/catalog:search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Searches Data Catalog for multiple resources like entries and tags that match a query."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "EntryGroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog List entry groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists entry groups in the specified project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Create an entry group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryGroupId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an entry group in the specified project and location."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Entries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog List entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists entries in an entry group."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Create an entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an entry in the specified entry group."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Get an entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an entry by its resource name."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Update an entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing entry."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Delete an entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryGroupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entryId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an existing entry."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "TagTemplates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Create a tag template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/tagTemplates",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tagTemplateId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a tag template for attaching metadata to data resources."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Get a tag template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/tagTemplates/:tagTemplateId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tagTemplateId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a tag template by its resource name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
