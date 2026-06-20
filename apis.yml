@@ -4,7 +4,7 @@ description: >-
   Google Cloud Data Catalog is a fully managed, scalable metadata management service that helps organizations discover,
   understand, and manage their data. It provides a unified view of data assets across Google Cloud and allows users to
   search, tag, and classify data resources.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-data-catalog/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -21,7 +21,7 @@ apis:
       The Data Catalog API provides programmatic access to catalog, search, and manage metadata for data assets across
       Google Cloud. It enables creation of entries, tag templates, and taxonomies for organizing and governing data
       resources at scale.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/data-catalog/docs
     baseURL: https://datacatalog.googleapis.com
     tags:
