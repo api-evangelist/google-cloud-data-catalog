@@ -40,6 +40,12 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-data-catalog-entry-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-data-catalog-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-data-catalog-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-data-catalog-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-data-catalog-scopes.yml
   - type: GitHubOrganization
