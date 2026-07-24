@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Data Catalog API
+  description: The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/data-catalog
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://datacatalog.googleapis.com/v1
+  description: Google Cloud Data Catalog API v1
+security:
+- oauth2: []
+tags:
+- name: Catalog
+  description: Search operations across the catalog
+paths:
+  /catalog:search:
+    post:
+      operationId: searchCatalog
+      summary: Google Cloud Data Catalog Search Data Catalog
+      description: Searches Data Catalog for multiple resources like entries and tags that match a query.
+      tags:
+      - Catalog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scope:
+                  type: object
+                  properties:
+                    includeProjectIds:
+                      type: array
+                      items:
+                        type: string
+                    includeOrgIds:
+                      type: array
+                      items:
+                        type: string
+                query:
+                  type: string
+                pageSize:
+                  type: integer
+                pageToken:
+                  type: string
+                orderBy:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchCatalogResponse'
+components:
+  schemas:
+    SearchCatalogResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              searchResultType:
+                type: string
+              searchResultSubtype:
+                type: string
+              relativeResourceName:
+                type: string
+              linkedResource:
+                type: string
+              fullyQualifiedName:
+                type: string
+              displayName:
+                type: string
+              description:
+                type: string
+        nextPageToken:
+          type: string
+        totalSize:
+          type: integer
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+externalDocs:
+  description: Google Cloud Data Catalog Documentation
+  url: https://cloud.google.com/data-catalog/docs/reference/rest
