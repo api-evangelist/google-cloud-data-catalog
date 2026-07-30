@@ -4,7 +4,20 @@ description: >-
   Google Cloud Data Catalog is a fully managed, scalable metadata management service that helps organizations discover,
   understand, and manage their data. It provides a unified view of data assets across Google Cloud and allows users to
   search, tag, and classify data resources.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-data-catalog.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-data-catalog/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -16,30 +29,81 @@ tags:
   - Google Cloud
   - Metadata
 apis:
-  - name: Google Cloud Data Catalog API
-    description: >-
-      The Data Catalog API provides programmatic access to catalog, search, and manage metadata for data assets across
-      Google Cloud. It enables creation of entries, tag templates, and taxonomies for organizing and governing data
-      resources at scale.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/data-catalog/docs
-    baseURL: https://datacatalog.googleapis.com
-    tags:
-      - Data Discovery
-      - Data Governance
-      - Metadata
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/data-catalog/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/google-cloud-data-catalog-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/data-catalog/docs/concepts/iam
-      - type: GettingStarted
-        url: https://cloud.google.com/data-catalog/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/google-cloud-data-catalog-entry-schema.json
+- aid: google-cloud-data-catalog:google-cloud-data-catalog-catalog-api
+  name: Google Cloud Data Catalog Catalog API
+  description: Search operations across the catalog
+  humanURL: https://cloud.google.com/data-catalog/docs
+  baseURL: https://datacatalog.googleapis.com
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-data-catalog-catalog-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/data-catalog/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/data-catalog/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/data-catalog/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-data-catalog-entry-schema.json
+- aid: google-cloud-data-catalog:google-cloud-data-catalog-entries-api
+  name: Google Cloud Data Catalog Entries API
+  description: Operations for managing catalog entries
+  humanURL: https://cloud.google.com/data-catalog/docs
+  baseURL: https://datacatalog.googleapis.com
+  tags:
+  - Entries
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-data-catalog-entries-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/data-catalog/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/data-catalog/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/data-catalog/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-data-catalog-entry-schema.json
+- aid: google-cloud-data-catalog:google-cloud-data-catalog-entrygroups-api
+  name: Google Cloud Data Catalog EntryGroups API
+  description: Operations for managing entry groups
+  humanURL: https://cloud.google.com/data-catalog/docs
+  baseURL: https://datacatalog.googleapis.com
+  tags:
+  - EntryGroups
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-data-catalog-entrygroups-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/data-catalog/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/data-catalog/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/data-catalog/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-data-catalog-entry-schema.json
+- aid: google-cloud-data-catalog:google-cloud-data-catalog-tagtemplates-api
+  name: Google Cloud Data Catalog TagTemplates API
+  description: Operations for managing tag templates
+  humanURL: https://cloud.google.com/data-catalog/docs
+  baseURL: https://datacatalog.googleapis.com
+  tags:
+  - TagTemplates
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-data-catalog-tagtemplates-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/data-catalog/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/data-catalog/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/data-catalog/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-data-catalog-entry-schema.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-data-catalog/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-data-catalog-agentic-access.yml
   - type: VulnerabilityDisclosure
