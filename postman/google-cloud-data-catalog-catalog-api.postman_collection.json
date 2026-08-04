@@ -1,0 +1,155 @@
+{
+  "info": {
+    "_postman_id": "4828c16a-9331-4ee7-8586-cbaa8ebeb947",
+    "name": "Google Cloud Data Catalog API",
+    "description": "The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:51.000Z",
+    "updatedAt": "2026-07-28T01:46:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4828c16a-9331-4ee7-8586-cbaa8ebeb947"
+  },
+  "item": [
+    {
+      "name": "catalog:search",
+      "item": [
+        {
+          "name": "Google Cloud Data Catalog Search Data Catalog",
+          "id": "57f7d441-1a3b-424a-9428-fbe628be30c3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"scope\": {\n    \"includeProjectIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"includeOrgIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"query\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/catalog:search",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "catalog:search"
+              ]
+            },
+            "description": "Searches Data Catalog for multiple resources like entries and tags that match a query."
+          },
+          "response": [
+            {
+              "id": "504c5bff-2bdc-4395-b5bb-d251660b9ab1",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"scope\": {\n    \"includeProjectIds\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"includeOrgIds\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"query\": \"<string>\",\n  \"pageSize\": \"<integer>\",\n  \"pageToken\": \"<string>\",\n  \"orderBy\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/catalog:search",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "catalog:search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"results\": [\n    {\n      \"searchResultType\": \"<string>\",\n      \"searchResultSubtype\": \"<string>\",\n      \"relativeResourceName\": \"<string>\",\n      \"linkedResource\": \"<string>\",\n      \"fullyQualifiedName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"searchResultType\": \"<string>\",\n      \"searchResultSubtype\": \"<string>\",\n      \"relativeResourceName\": \"<string>\",\n      \"linkedResource\": \"<string>\",\n      \"fullyQualifiedName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\",\n  \"totalSize\": \"<integer>\"\n}",
+              "createdAt": "2026-07-28T01:46:52.000Z",
+              "updatedAt": "2026-07-28T01:46:52.000Z",
+              "uid": "35240-504c5bff-2bdc-4395-b5bb-d251660b9ab1"
+            }
+          ],
+          "createdAt": "2026-07-28T01:46:51.000Z",
+          "updatedAt": "2026-07-28T01:46:51.000Z",
+          "uid": "35240-57f7d441-1a3b-424a-9428-fbe628be30c3"
+        }
+      ],
+      "id": "e932fe1e-647f-47ed-8725-987d4d30d170",
+      "createdAt": "2026-07-28T01:46:51.000Z",
+      "updatedAt": "2026-07-28T01:46:51.000Z",
+      "uid": "35240-e932fe1e-647f-47ed-8725-987d4d30d170"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://datacatalog.googleapis.com/v1"
+    }
+  ]
+}

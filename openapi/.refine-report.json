@@ -1,0 +1,20 @@
+{
+  "provider": "google-cloud-data-catalog",
+  "sources": [
+    "google-cloud-data-catalog-catalog-api-openapi.yml",
+    "google-cloud-data-catalog-entries-api-openapi.yml",
+    "google-cloud-data-catalog-entrygroups-api-openapi.yml",
+    "google-cloud-data-catalog-tagtemplates-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-data-catalog-catalog-api-openapi.yml",
+    "google-cloud-data-catalog-entries-api-openapi.yml",
+    "google-cloud-data-catalog-entrygroups-api-openapi.yml",
+    "google-cloud-data-catalog-tagtemplates-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

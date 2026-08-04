@@ -1,0 +1,358 @@
+{
+  "info": {
+    "_postman_id": "57c0a468-74c8-4239-ae1b-89799a31f834",
+    "name": "Google Cloud Data Catalog TagTemplates API",
+    "description": "The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:02.000Z",
+    "updatedAt": "2026-07-28T01:47:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-57c0a468-74c8-4239-ae1b-89799a31f834"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "tagTemplates",
+                      "item": [
+                        {
+                          "name": "{tagTemplateId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Data Catalog Get a tag template",
+                              "id": "57e18867-f8f0-43f4-a171-bfb6214bcc99",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/tagTemplates/:tagTemplateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "tagTemplates",
+                                    ":tagTemplateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "69b8e0e8-47f0-4d76-b313-95ab6a41d7ca",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "3194c65f-ffdd-42ce-893b-15cbd98bfd54",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "84528d76-24b7-4093-9832-ffd8983c794f",
+                                      "key": "tagTemplateId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets a tag template by its resource name."
+                              },
+                              "response": [
+                                {
+                                  "id": "6fb70d64-d7d0-4c8a-9b36-495e3f639d72",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/tagTemplates/:tagTemplateId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "tagTemplates",
+                                        ":tagTemplateId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "tagTemplateId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"isPubliclyReadable\": \"<boolean>\",\n  \"fields\": {\n    \"laborum_f8\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"DOUBLE\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    }\n  }\n}",
+                                  "createdAt": "2026-07-28T01:47:03.000Z",
+                                  "updatedAt": "2026-07-28T01:47:03.000Z",
+                                  "uid": "35240-6fb70d64-d7d0-4c8a-9b36-495e3f639d72"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:03.000Z",
+                              "updatedAt": "2026-07-28T01:47:03.000Z",
+                              "uid": "35240-57e18867-f8f0-43f4-a171-bfb6214bcc99"
+                            }
+                          ],
+                          "id": "2930ca06-1bda-42b2-b380-187e445d2b0d",
+                          "createdAt": "2026-07-28T01:47:03.000Z",
+                          "updatedAt": "2026-07-28T01:47:03.000Z",
+                          "uid": "35240-2930ca06-1bda-42b2-b380-187e445d2b0d"
+                        },
+                        {
+                          "name": "Google Cloud Data Catalog Create a tag template",
+                          "id": "86f2c1a0-5bb7-414e-a685-56da2ac06b45",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"isPubliclyReadable\": \"<boolean>\",\n  \"fields\": {\n    \"laborum_f8\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"DOUBLE\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    }\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/tagTemplates?tagTemplateId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "tagTemplates"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "tagTemplateId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "4aaa0568-ab1c-4e3a-b6df-872d0b853ba3",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "56d9af27-285b-48eb-b462-6f819cab2f01",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a tag template for attaching metadata to data resources."
+                          },
+                          "response": [
+                            {
+                              "id": "4ba9d3b7-448b-485d-8caa-51f385a5dbde",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"isPubliclyReadable\": \"<boolean>\",\n  \"fields\": {\n    \"laborum_f8\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"DOUBLE\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    }\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/tagTemplates?tagTemplateId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "tagTemplates"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "tagTemplateId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"isPubliclyReadable\": \"<boolean>\",\n  \"fields\": {\n    \"laborum_f8\": {\n      \"displayName\": \"<string>\",\n      \"type\": {\n        \"primitiveType\": \"DOUBLE\"\n      },\n      \"isRequired\": \"<boolean>\",\n      \"order\": \"<integer>\"\n    }\n  }\n}",
+                              "createdAt": "2026-07-28T01:47:03.000Z",
+                              "updatedAt": "2026-07-28T01:47:03.000Z",
+                              "uid": "35240-4ba9d3b7-448b-485d-8caa-51f385a5dbde"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:03.000Z",
+                          "updatedAt": "2026-07-28T01:47:03.000Z",
+                          "uid": "35240-86f2c1a0-5bb7-414e-a685-56da2ac06b45"
+                        }
+                      ],
+                      "id": "c83e68cc-c7cb-4462-89b4-fd197fc6e3b2",
+                      "createdAt": "2026-07-28T01:47:03.000Z",
+                      "updatedAt": "2026-07-28T01:47:03.000Z",
+                      "uid": "35240-c83e68cc-c7cb-4462-89b4-fd197fc6e3b2"
+                    }
+                  ],
+                  "id": "cb21d5e5-7c7f-4806-b2e7-4649e9c881b7",
+                  "createdAt": "2026-07-28T01:47:03.000Z",
+                  "updatedAt": "2026-07-28T01:47:03.000Z",
+                  "uid": "35240-cb21d5e5-7c7f-4806-b2e7-4649e9c881b7"
+                }
+              ],
+              "id": "869ee9f2-006b-4240-828a-f40842d8ef88",
+              "createdAt": "2026-07-28T01:47:03.000Z",
+              "updatedAt": "2026-07-28T01:47:03.000Z",
+              "uid": "35240-869ee9f2-006b-4240-828a-f40842d8ef88"
+            }
+          ],
+          "id": "4669e394-8968-40cb-90c1-db4e926bec16",
+          "createdAt": "2026-07-28T01:47:03.000Z",
+          "updatedAt": "2026-07-28T01:47:03.000Z",
+          "uid": "35240-4669e394-8968-40cb-90c1-db4e926bec16"
+        }
+      ],
+      "id": "dd9d322a-86c9-4473-aceb-0678d1cd6c62",
+      "createdAt": "2026-07-28T01:47:03.000Z",
+      "updatedAt": "2026-07-28T01:47:03.000Z",
+      "uid": "35240-dd9d322a-86c9-4473-aceb-0678d1cd6c62"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://datacatalog.googleapis.com/v1"
+    }
+  ]
+}

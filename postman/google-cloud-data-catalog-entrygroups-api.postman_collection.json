@@ -1,0 +1,358 @@
+{
+  "info": {
+    "_postman_id": "717e5399-a6c9-4cd1-acff-335c6bb33cbd",
+    "name": "Google Cloud Data Catalog EntryGroups API",
+    "description": "The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:53.000Z",
+    "updatedAt": "2026-07-28T01:46:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-717e5399-a6c9-4cd1-acff-335c6bb33cbd"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "entryGroups",
+                      "item": [
+                        {
+                          "name": "Google Cloud Data Catalog List entry groups",
+                          "id": "84999bc2-8b39-48e8-a062-1144ce44b19c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "entryGroups"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d4ca8e23-1e3f-4697-93ff-d7a38aa153ce",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "34f52b05-11ae-4e98-9020-b9130483902a",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists entry groups in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "100a3e4c-0348-4ac5-9613-43965b30e50d",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "entryGroups"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"entryGroups\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"dataCatalogTimestamps\": {\n        \"createTime\": \"<dateTime>\",\n        \"updateTime\": \"<dateTime>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"dataCatalogTimestamps\": {\n        \"createTime\": \"<dateTime>\",\n        \"updateTime\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:46:53.000Z",
+                              "updatedAt": "2026-07-28T01:46:53.000Z",
+                              "uid": "35240-100a3e4c-0348-4ac5-9613-43965b30e50d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:53.000Z",
+                          "updatedAt": "2026-07-28T01:46:53.000Z",
+                          "uid": "35240-84999bc2-8b39-48e8-a062-1144ce44b19c"
+                        },
+                        {
+                          "name": "Google Cloud Data Catalog Create an entry group",
+                          "id": "82f7184f-47a4-4560-875e-242adb1216da",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"dataCatalogTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups?entryGroupId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "entryGroups"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "entryGroupId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c5dfbd0b-95a9-4d32-99f9-055bd8067c93",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "ab71e27c-c229-4757-b2bc-85254efc95d4",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates an entry group in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "8b93ed75-c7c1-4693-8114-b34240319f2e",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"dataCatalogTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups?entryGroupId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "entryGroups"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "entryGroupId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"dataCatalogTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\"\n  }\n}",
+                              "createdAt": "2026-07-28T01:46:53.000Z",
+                              "updatedAt": "2026-07-28T01:46:53.000Z",
+                              "uid": "35240-8b93ed75-c7c1-4693-8114-b34240319f2e"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:53.000Z",
+                          "updatedAt": "2026-07-28T01:46:53.000Z",
+                          "uid": "35240-82f7184f-47a4-4560-875e-242adb1216da"
+                        }
+                      ],
+                      "id": "8ba32869-7e89-4c38-8d81-19ca48637d2a",
+                      "createdAt": "2026-07-28T01:46:53.000Z",
+                      "updatedAt": "2026-07-28T01:46:53.000Z",
+                      "uid": "35240-8ba32869-7e89-4c38-8d81-19ca48637d2a"
+                    }
+                  ],
+                  "id": "1985ddb6-188f-4667-a564-3da75ec39fed",
+                  "createdAt": "2026-07-28T01:46:53.000Z",
+                  "updatedAt": "2026-07-28T01:46:53.000Z",
+                  "uid": "35240-1985ddb6-188f-4667-a564-3da75ec39fed"
+                }
+              ],
+              "id": "4ec108b9-e9a1-46e7-b960-0d788fe77db9",
+              "createdAt": "2026-07-28T01:46:53.000Z",
+              "updatedAt": "2026-07-28T01:46:53.000Z",
+              "uid": "35240-4ec108b9-e9a1-46e7-b960-0d788fe77db9"
+            }
+          ],
+          "id": "d3325164-ad48-49d7-b47e-aefce2c6de7c",
+          "createdAt": "2026-07-28T01:46:53.000Z",
+          "updatedAt": "2026-07-28T01:46:53.000Z",
+          "uid": "35240-d3325164-ad48-49d7-b47e-aefce2c6de7c"
+        }
+      ],
+      "id": "eb21d376-12d5-42f1-84ad-40bd2807c3ef",
+      "createdAt": "2026-07-28T01:46:53.000Z",
+      "updatedAt": "2026-07-28T01:46:53.000Z",
+      "uid": "35240-eb21d376-12d5-42f1-84ad-40bd2807c3ef"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://datacatalog.googleapis.com/v1"
+    }
+  ]
+}

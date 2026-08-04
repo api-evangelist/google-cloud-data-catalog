@@ -1,0 +1,818 @@
+{
+  "info": {
+    "_postman_id": "9a67e5d3-2a7b-473b-95c7-a48006e71d21",
+    "name": "Google Cloud Data Catalog Entries API",
+    "description": "The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:52.000Z",
+    "updatedAt": "2026-07-28T01:46:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9a67e5d3-2a7b-473b-95c7-a48006e71d21"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "entryGroups",
+                      "item": [
+                        {
+                          "name": "{entryGroupId}",
+                          "item": [
+                            {
+                              "name": "entries",
+                              "item": [
+                                {
+                                  "name": "{entryId}",
+                                  "item": [
+                                    {
+                                      "name": "Google Cloud Data Catalog Get an entry",
+                                      "id": "fae9032c-1896-4083-a6c3-31a705abf328",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "entryGroups",
+                                            ":entryGroupId",
+                                            "entries",
+                                            ":entryId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "d129ede3-203b-4e51-b99d-cea21805665c",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "841d3f4c-6e76-4bd9-8bb0-ff4d3c98b838",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "dd71996f-b809-486c-b5b9-12c7f3fdc564",
+                                              "key": "entryGroupId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "719229ca-601b-4d5e-b959-4b35c2c11339",
+                                              "key": "entryId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Gets an entry by its resource name."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "41362a57-8ffc-4e0d-800e-8ceab630e9be",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "entryGroups",
+                                                ":entryGroupId",
+                                                "entries",
+                                                ":entryId"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "entryGroupId"
+                                                },
+                                                {
+                                                  "key": "entryId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:46:52.000Z",
+                                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                                          "uid": "35240-41362a57-8ffc-4e0d-800e-8ceab630e9be"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:46:52.000Z",
+                                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                                      "uid": "35240-fae9032c-1896-4083-a6c3-31a705abf328"
+                                    },
+                                    {
+                                      "name": "Google Cloud Data Catalog Update an entry",
+                                      "id": "306df06b-9d14-42e1-be63-7f7a4c03b149",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "PATCH",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId?updateMask=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "entryGroups",
+                                            ":entryGroupId",
+                                            "entries",
+                                            ":entryId"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "updateMask",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "3c88609b-22e5-40a7-a237-3e17c6e9e83d",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "020a61fe-41cb-45ab-9ea3-34a670ed64e9",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "f8a3d46e-521a-4961-ac79-46041fbc54a6",
+                                              "key": "entryGroupId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "28da5490-6175-4a11-9498-b90b2f86d751",
+                                              "key": "entryId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Updates an existing entry."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "635f39f5-84de-4545-9b81-958726c82a88",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "PATCH",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId?updateMask=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "entryGroups",
+                                                ":entryGroupId",
+                                                "entries",
+                                                ":entryId"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "key": "updateMask",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "entryGroupId"
+                                                },
+                                                {
+                                                  "key": "entryId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T01:46:52.000Z",
+                                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                                          "uid": "35240-635f39f5-84de-4545-9b81-958726c82a88"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:46:52.000Z",
+                                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                                      "uid": "35240-306df06b-9d14-42e1-be63-7f7a4c03b149"
+                                    },
+                                    {
+                                      "name": "Google Cloud Data Catalog Delete an entry",
+                                      "id": "1ae38651-e358-4b28-9b3d-f0c7b8eeb6ba",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "entryGroups",
+                                            ":entryGroupId",
+                                            "entries",
+                                            ":entryId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "5e15b2ed-4c9d-4c54-ace6-3a9455ffe48f",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "19ccbc01-d3d6-40d6-a284-c8dce4c1a822",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "53b165d9-2ef7-4362-8c76-a4ab2da12b7c",
+                                              "key": "entryGroupId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "510c04c9-2db1-4107-8170-840f0eca423e",
+                                              "key": "entryId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Deletes an existing entry."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "c5a10243-72d5-4bce-81ec-607daacc2cef",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries/:entryId",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "entryGroups",
+                                                ":entryGroupId",
+                                                "entries",
+                                                ":entryId"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "entryGroupId"
+                                                },
+                                                {
+                                                  "key": "entryId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T01:46:52.000Z",
+                                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                                          "uid": "35240-c5a10243-72d5-4bce-81ec-607daacc2cef"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:46:52.000Z",
+                                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                                      "uid": "35240-1ae38651-e358-4b28-9b3d-f0c7b8eeb6ba"
+                                    }
+                                  ],
+                                  "id": "0901e210-8599-429f-a05a-d8b2034daa80",
+                                  "createdAt": "2026-07-28T01:46:52.000Z",
+                                  "updatedAt": "2026-07-28T01:46:52.000Z",
+                                  "uid": "35240-0901e210-8599-429f-a05a-d8b2034daa80"
+                                },
+                                {
+                                  "name": "Google Cloud Data Catalog List entries",
+                                  "id": "0953c4a9-d4b0-48b7-8d98-94562edddeae",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries?pageSize=<integer>&pageToken=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "entryGroups",
+                                        ":entryGroupId",
+                                        "entries"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "pageSize",
+                                          "value": "<integer>"
+                                        },
+                                        {
+                                          "key": "pageToken",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "20faab1f-0bd6-4f06-9c68-3bde014acc7b",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "cf04af38-4228-4c6d-87a3-7bbba4104b19",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "1f3c48ac-f33c-46c7-aa5a-067888955eeb",
+                                          "key": "entryGroupId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists entries in an entry group."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "637ca403-3e99-4f27-9267-56ab1a5fe9d1",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries?pageSize=<integer>&pageToken=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "entryGroups",
+                                            ":entryGroupId",
+                                            "entries"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "pageSize",
+                                              "value": "<integer>"
+                                            },
+                                            {
+                                              "key": "pageToken",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "entryGroupId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"entries\": [\n    {\n      \"name\": \"<string>\",\n      \"linkedResource\": \"<string>\",\n      \"fullyQualifiedName\": \"<string>\",\n      \"type\": \"ENTRY_TYPE_UNSPECIFIED\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": {\n        \"columns\": [\n          {\n            \"column\": \"<string>\",\n            \"type\": \"<string>\",\n            \"description\": \"<string>\",\n            \"mode\": \"<string>\"\n          },\n          {\n            \"column\": \"<string>\",\n            \"type\": \"<string>\",\n            \"description\": \"<string>\",\n            \"mode\": \"<string>\"\n          }\n        ]\n      },\n      \"sourceSystemTimestamps\": {\n        \"createTime\": \"<dateTime>\",\n        \"updateTime\": \"<dateTime>\",\n        \"expireTime\": \"<dateTime>\"\n      },\n      \"integratedSystem\": \"<string>\",\n      \"userSpecifiedSystem\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"linkedResource\": \"<string>\",\n      \"fullyQualifiedName\": \"<string>\",\n      \"type\": \"DATA_STREAM\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"schema\": {\n        \"columns\": [\n          {\n            \"column\": \"<string>\",\n            \"type\": \"<string>\",\n            \"description\": \"<string>\",\n            \"mode\": \"<string>\"\n          },\n          {\n            \"column\": \"<string>\",\n            \"type\": \"<string>\",\n            \"description\": \"<string>\",\n            \"mode\": \"<string>\"\n          }\n        ]\n      },\n      \"sourceSystemTimestamps\": {\n        \"createTime\": \"<dateTime>\",\n        \"updateTime\": \"<dateTime>\",\n        \"expireTime\": \"<dateTime>\"\n      },\n      \"integratedSystem\": \"<string>\",\n      \"userSpecifiedSystem\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:46:52.000Z",
+                                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                                      "uid": "35240-637ca403-3e99-4f27-9267-56ab1a5fe9d1"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:46:52.000Z",
+                                  "updatedAt": "2026-07-28T01:46:52.000Z",
+                                  "uid": "35240-0953c4a9-d4b0-48b7-8d98-94562edddeae"
+                                },
+                                {
+                                  "name": "Google Cloud Data Catalog Create an entry",
+                                  "id": "6430cd8c-b7d8-4d7c-b5a3-dbfe32fa4f78",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries?entryId=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "entryGroups",
+                                        ":entryGroupId",
+                                        "entries"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) ",
+                                          "key": "entryId",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "079b160c-f4f3-47dd-af40-e08050fcdf3a",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "d623e890-d743-42a7-bb91-6782181a87fc",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "8768cc28-66f6-4e87-9b6b-1a5d1bc04e50",
+                                          "key": "entryGroupId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Creates an entry in the specified entry group."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "953801f4-6dab-4ffe-a8b9-79add67dc93b",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/entryGroups/:entryGroupId/entries?entryId=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "entryGroups",
+                                            ":entryGroupId",
+                                            "entries"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "entryId",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "entryGroupId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"name\": \"<string>\",\n  \"linkedResource\": \"<string>\",\n  \"fullyQualifiedName\": \"<string>\",\n  \"type\": \"ZONE\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"schema\": {\n    \"columns\": [\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      },\n      {\n        \"column\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"mode\": \"<string>\"\n      }\n    ]\n  },\n  \"sourceSystemTimestamps\": {\n    \"createTime\": \"<dateTime>\",\n    \"updateTime\": \"<dateTime>\",\n    \"expireTime\": \"<dateTime>\"\n  },\n  \"integratedSystem\": \"<string>\",\n  \"userSpecifiedSystem\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:46:52.000Z",
+                                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                                      "uid": "35240-953801f4-6dab-4ffe-a8b9-79add67dc93b"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:46:52.000Z",
+                                  "updatedAt": "2026-07-28T01:46:52.000Z",
+                                  "uid": "35240-6430cd8c-b7d8-4d7c-b5a3-dbfe32fa4f78"
+                                }
+                              ],
+                              "id": "e301288e-fc7d-4ed7-bae4-57c34be308ad",
+                              "createdAt": "2026-07-28T01:46:52.000Z",
+                              "updatedAt": "2026-07-28T01:46:52.000Z",
+                              "uid": "35240-e301288e-fc7d-4ed7-bae4-57c34be308ad"
+                            }
+                          ],
+                          "id": "9e1d9d76-cb03-42ed-9316-5db6293bd79a",
+                          "createdAt": "2026-07-28T01:46:52.000Z",
+                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                          "uid": "35240-9e1d9d76-cb03-42ed-9316-5db6293bd79a"
+                        }
+                      ],
+                      "id": "342b9154-0481-42fe-b571-3faa08039990",
+                      "createdAt": "2026-07-28T01:46:52.000Z",
+                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                      "uid": "35240-342b9154-0481-42fe-b571-3faa08039990"
+                    }
+                  ],
+                  "id": "09541fd3-01ad-446a-a056-702abfa675ca",
+                  "createdAt": "2026-07-28T01:46:52.000Z",
+                  "updatedAt": "2026-07-28T01:46:52.000Z",
+                  "uid": "35240-09541fd3-01ad-446a-a056-702abfa675ca"
+                }
+              ],
+              "id": "167e624b-8b03-4722-883f-86e4f6468565",
+              "createdAt": "2026-07-28T01:46:52.000Z",
+              "updatedAt": "2026-07-28T01:46:52.000Z",
+              "uid": "35240-167e624b-8b03-4722-883f-86e4f6468565"
+            }
+          ],
+          "id": "bd00370b-b504-40ac-a831-8186b3175a5a",
+          "createdAt": "2026-07-28T01:46:52.000Z",
+          "updatedAt": "2026-07-28T01:46:52.000Z",
+          "uid": "35240-bd00370b-b504-40ac-a831-8186b3175a5a"
+        }
+      ],
+      "id": "ba03a124-dc9e-47cb-a343-ef26198510eb",
+      "createdAt": "2026-07-28T01:46:52.000Z",
+      "updatedAt": "2026-07-28T01:46:52.000Z",
+      "uid": "35240-ba03a124-dc9e-47cb-a343-ef26198510eb"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://datacatalog.googleapis.com/v1"
+    }
+  ]
+}
