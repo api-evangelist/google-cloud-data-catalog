@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Data Catalog TagTemplates API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TagTemplates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Create a tag template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/tagTemplates",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tagTemplateId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a tag template for attaching metadata to data resources."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Data Catalog Get a tag template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://datacatalog.googleapis.com/v1/projects/:projectId/locations/:location/tagTemplates/:tagTemplateId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tagTemplateId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a tag template by its resource name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
