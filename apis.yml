@@ -4,6 +4,18 @@ description: >-
   Google Cloud Data Catalog is a fully managed, scalable metadata management service that helps organizations discover,
   understand, and manage their data. It provides a unified view of data assets across Google Cloud and allows users to
   search, tag, and classify data resources.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
