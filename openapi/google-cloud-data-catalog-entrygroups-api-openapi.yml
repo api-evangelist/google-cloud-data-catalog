@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Google Cloud Data Catalog EntryGroups API
+  title: Google Cloud Data Catalog Entry Groups API
   description: The Data Catalog API provides a unified view of all data assets and enables metadata management, data discovery, and data governance across an organization. It allows programmatic creation and management of entries, tag templates, and policy tags.
   version: v1
   contact:
@@ -88,6 +88,15 @@ paths:
                 $ref: '#/components/schemas/EntryGroup'
 components:
   schemas:
+    ListEntryGroupsResponse:
+      type: object
+      properties:
+        entryGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntryGroup'
+        nextPageToken:
+          type: string
     EntryGroup:
       type: object
       properties:
@@ -106,15 +115,6 @@ components:
             updateTime:
               type: string
               format: date-time
-    ListEntryGroupsResponse:
-      type: object
-      properties:
-        entryGroups:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntryGroup'
-        nextPageToken:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
