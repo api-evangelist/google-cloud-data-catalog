@@ -88,15 +88,6 @@ paths:
                 $ref: '#/components/schemas/EntryGroup'
 components:
   schemas:
-    ListEntryGroupsResponse:
-      type: object
-      properties:
-        entryGroups:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntryGroup'
-        nextPageToken:
-          type: string
     EntryGroup:
       type: object
       properties:
@@ -115,6 +106,15 @@ components:
             updateTime:
               type: string
               format: date-time
+    ListEntryGroupsResponse:
+      type: object
+      properties:
+        entryGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntryGroup'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
