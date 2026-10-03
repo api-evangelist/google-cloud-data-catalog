@@ -207,15 +207,6 @@ paths:
           description: Successful response
 components:
   schemas:
-    ListEntriesResponse:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/Entry'
-        nextPageToken:
-          type: string
     Entry:
       type: object
       properties:
@@ -284,6 +275,15 @@ components:
         userSpecifiedSystem:
           type: string
           description: Custom source system that user specified.
+    ListEntriesResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entry'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
