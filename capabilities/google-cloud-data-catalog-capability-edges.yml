@@ -1,0 +1,24 @@
+slug: google-cloud-data-catalog
+provider: Google Cloud Data Catalog
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Entries
+  spec_file: google-cloud-data-catalog-entries-api-openapi.yml
+  capability_id: BC-610.10
+  capability_id_l1: BC-610
+  capability_name: Data Governance Management
+  confidence: 0.7
+  evidence: 'createEntry  Google Cloud Data Catalog Create an entry; schemas: Entry, ListEntriesResponse'
+  reason: Entries are metadata records describing data assets in the catalog; CRUD over them is cataloguing/stewardship
+    of data assets, i.e. data governance. Not MDM (no business master records) and not infrastructure.
